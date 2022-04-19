@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Efficiency Calculator Result Report</title>
+    <script src="https://kit.fontawesome.com/88cacf6a0e.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/report.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <img class = "wyblo-logo" src="{{ url_for('static', filename='images/download-removebg-preview.png') }}">
+    
+    <p class="calculator-text">Efficiency Calculator</p>
+    
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    
+        <div class="svg-container">
+            <svg class="progress-circle" height="500px" width="500px" >
+                <circle class="progress-circle-back"
+                        cx="308" cy="350" r="134"></circle>
+                <circle class="progress-circle-prog"
+                        cx="308" cy="350" r="134"></circle>
+            </svg>
+        </div>
+        <div class="progress-text" data-progress="0">0</div>
+    <script>
+        function progressBar(progressVal,totalPercentageVal = 100) {
+            var strokeVal = (6.64 * 100) /  totalPercentageVal;
+            var x = document.querySelector('.progress-circle-prog');
+            x.style.strokeDasharray = progressVal * strokeVal + ' 999';
+            var el = document.querySelector('.progress-text'); 
+            var from = $('.progress-text').data('progress');
+            $('.progress-text').data('progress', progressVal);
+            var start = new Date().getTime();
+    
+            setTimeout(function() {
+                var now = (new Date().getTime()) - start;
+                var progress = now / 700;
+                el.innerHTML = progressVal / totalPercentageVal * 100 + '%';
+                if (progress < 1) setTimeout(arguments.callee, 10);
+            }, 10);
+
+}
+
+progressBar('{{value}}',100);
+
+
+    </script>
+
+    <div class="calculator-score">Efficiency Score</div>
+
+
+    <div class="container">
+        <div class="bar">
+            <span class = "parameter">Observe and Optimize</span>
+            <div class="progress-wrap progress" data-progress-percent="{{section1}}">
+                <div class="progress-bar progress"></div>
+            </div>
+        </div>
+        <div class="bar">
+            <span class = "parameter">Feedback</span>
+            <div class="progress-wrap2 progress2" data-progress-percent2="{{section2}}">
+                <div class="progress-bar2 progress2"></div>
+            </div>
+        </div>
+        <div class="bar">
+            <span class = "parameter">Innovative Training</span>
+            <div class="progress-wrap3 progress3" data-progress-percent3="{{section3}}">
+                <div class="progress-bar3 progress3"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container1">
+        <div class="bar1">
+            <span class = "parameter">Real-time Workspace</span>
+            <div class="progress-wrap4 progress4" data-progress-percent4="{{section4}}">
+                <div class="progress-bar4 progress4"></div>
+            </div>
+        </div>
+        <div class="bar1">
+            <span class = "parameter">Progressive Relationship</span>
+            <div class="progress-wrap5 progress5" data-progress-percent5="{{section5}}">
+                <div class="progress-bar5 progress5"></div>
+            </div>
+        </div>
+        <div class="bar1">
+            <span class = "parameter">Accessibility</span>
+            <div class="progress-wrap6 progress6" data-progress-percent6="{{section6}}">
+                <div class="progress-bar6 progress6"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <script>
+        // on page load...
+    moveProgressBar();
+    // on browser resize...
+    $(window).resize(function() {
+        moveProgressBar();
+    });
+
+    // SIGNATURE PROGRESS
+    function moveProgressBar() {
+      console.log("moveProgressBar");
+        var getPercent = ($('.progress-wrap').data('progress-percent') / 100);
+        var getPercent2 = ($('.progress-wrap2').data('progress-percent2') / 100);
+        var getPercent3 = ($('.progress-wrap3').data('progress-percent3') / 100);
+        var getPercent4 = ($('.progress-wrap4').data('progress-percent4') / 100);
+        var getPercent5 = ($('.progress-wrap5').data('progress-percent5') / 100);
+        var getPercent6 = ($('.progress-wrap6').data('progress-percent6') / 100);
+        var getProgressWrapWidth = $('.progress-wrap').width();
+        var progressTotal = (getPercent * getProgressWrapWidth);
+        var progressTotal2 = (getPercent2 * getProgressWrapWidth);
+        var progressTotal3 = (getPercent3 * getProgressWrapWidth);
+        var progressTotal4 = (getPercent4 * getProgressWrapWidth);
+        var progressTotal5 = (getPercent5 * getProgressWrapWidth);
+        var progressTotal6 = (getPercent6 * getProgressWrapWidth);
+        var animationLength = 2500;
+        
+        // on page load, animate percentage bar to data percentage length
+        // .stop() used to prevent animation queueing
+        $('.progress-bar').stop().animate({
+            left: progressTotal
+        }, animationLength);
+        $('.progress-bar2').stop().animate({
+            left: progressTotal2
+        }, animationLength);
+        $('.progress-bar3').stop().animate({
+            left: progressTotal3
+        }, animationLength);
+        $('.progress-bar4').stop().animate({
+            left: progressTotal4
+        }, animationLength);
+        $('.progress-bar5').stop().animate({
+            left: progressTotal5
+        }, animationLength);
+        $('.progress-bar6').stop().animate({
+            left: progressTotal6
+        }, animationLength)
+    }
+
+
+    </script>
+
+
+</body>
+
+</html>
