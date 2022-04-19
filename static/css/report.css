@@ -1,0 +1,212 @@
+html {
+  position: relative;
+  max-width: 1024px;
+  min-height: 768px;
+  height: 100%;
+}
+
+body {
+  background: #2D3E52;
+  color: #FBFFFF ;
+}
+.wyblo-logo{
+  margin-left: 700px;
+  margin-top: 60px;
+  width: 300px;
+}
+.calculator-text{
+  margin-left: 620px;
+  margin-top: 40px;
+  width: 100%;
+  font-size: 3.5em;
+}
+
+.svg-container{  
+  width: auto;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  margin-left: 500px;
+}
+
+.progress-circle {
+position: relative;
+transform: rotate(-90deg);
+z-index: 0;
+display: block;
+}
+
+.progress-circle-back {
+fill: none; 
+stroke: #39424E;
+stroke-width:20px;
+height: 300px;
+width: 500px;
+}
+
+.progress-circle-prog {
+height: 300px;
+width: 500px;
+fill: none; 
+stroke: #00BB9F;
+stroke-width: 20px;  
+stroke-dasharray: 0 999;    
+stroke-dashoffset: 0px;
+transition: stroke-dasharray 0.7s linear 0s;
+}
+
+.progress-text {
+width: 100%;
+position: absolute;
+top: 388px;
+left: 350px;
+font-size: 4em;
+z-index: 1;
+text-align: center;
+}
+
+.calculator-score{
+  margin-left: 350px;
+  width: 100%;
+  position: relative;
+  font-size: 3.5em;
+  z-index: 99;
+  text-align: center;
+}
+
+
+.bar{
+  margin-left: 100px;
+  margin-top: 150px;
+}
+
+.progress {
+  width: 400px;
+  height: 15px;
+}
+
+.progress-wrap {
+  background: #00BB9F;
+  margin: 20px 0;
+  overflow: hidden;
+  position: relative;
+}
+.progress-wrap .progress-bar {
+  background: #ddd;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.progress2 {
+  width: 400px;
+  height: 15px;
+}
+
+.progress-wrap2 {
+  background: #00BB9F;
+  margin: 20px 0;
+  overflow: hidden;
+  position: relative;
+}
+.progress-wrap2 .progress-bar2 {
+  background: #ddd;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.progress3 {
+  width: 400px;
+  height: 15px;
+}
+
+.progress-wrap3 {
+  background: #00BB9F;
+  margin: 20px 0;
+  overflow: hidden;
+  position: relative;
+}
+.progress-wrap3 .progress-bar3 {
+  background: #ddd;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.progress4 {
+  width: 400px;
+  height: 15px;
+}
+
+.progress-wrap4 {
+  background: #00BB9F;
+  margin: 20px 0;
+  overflow: hidden;
+  position: relative;
+}
+.progress-wrap4 .progress-bar4 {
+  background: #ddd;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.progress5 {
+  width: 400px;
+  height: 15px;
+}
+
+.progress-wrap5 {
+  background: #00BB9F;
+  margin: 20px 0;
+  overflow: hidden;
+  position: relative;
+}
+.progress-wrap5 .progress-bar5 {
+  background: #ddd;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.progress6 {
+  width: 400px;
+  height: 15px;
+}
+
+.progress-wrap6 {
+  background: #00BB9F;
+  margin: 20px 0;
+  overflow: hidden;
+  position: relative;
+}
+.progress-wrap6 .progress-bar6 {
+  background: #ddd;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.container {
+  display: flex;
+}
+.container > .bar {
+  flex: 1; /*grow*/
+}
+
+.bar1{
+  margin-left: 107px;
+  margin-top: 150px;
+}
+
+.parameter{
+  font-size: 2rem;
+}
+
+.container1 {
+  display: flex;
+}
+.container1 > .bar1 {
+  flex: 2; /*grow*/
+}
